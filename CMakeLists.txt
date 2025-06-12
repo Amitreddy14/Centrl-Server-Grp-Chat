@@ -71,3 +71,38 @@ else()
   add_executable(${USER_EXEC_NAME} src/cmd/user.cxx)
   target_link_libraries(${USER_EXEC_NAME} PRIVATE ${LIBRARY_NAME})
 endif()
+
+# add server executables
+if ( "$ENV{CS1515_TA_MODE}" STREQUAL "on" )
+  add_executable(${SERVER_EXEC_NAME} src-ta/cmd/server.cxx)
+  target_link_libraries(${SERVER_EXEC_NAME} PRIVATE ${LIBRARY_NAME_TA})
+else()
+  add_executable(${SERVER_EXEC_NAME} src/cmd/server.cxx)
+  target_link_libraries(${SERVER_EXEC_NAME} PRIVATE ${LIBRARY_NAME})
+endif()
+
+# properties
+set_target_properties(
+  ${LIBRARY_NAME}
+  ${USER_EXEC_NAME}
+  ${SERVER_EXEC_NAME}
+    PROPERTIES
+      CXX_STANDARD 20
+      CXX_STANDARD_REQUIRED YES
+      CXX_EXTENSIONS YES
+)
+
+# ta properties
+if ( "$ENV{CS1515_TA_MODE}" STREQUAL "on" )
+  set_target_properties(
+    ${LIBRARY_NAME_TA}
+        PROPERTIES
+          CXX_STANDARD 20
+          CXX_STANDARD_REQUIRED YES
+          CXX_EXTENSIONS YES
+  )
+endif()
+
+# add tests
+add_subdirectory(test)
+add_custom_target(check ./test.sh)
