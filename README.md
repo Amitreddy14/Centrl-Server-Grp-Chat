@@ -47,3 +47,56 @@ To run the user binary, run `./chat_user <config file>`. You may find example us
 3. Improve the command-line user interface for better usability.
 
 ## _Reference_
+#### Core References for Secure Messaging and Group Chat Protocols
+1. P. Rösler, C. Mainka, and J. Schwenk,
+"More is Less: On the End-to-End Security of Group Chats in Signal, WhatsApp, and Threema",
+2018 IEEE European Symposium on Security and Privacy (EuroS&P),
+https://doi.org/10.1109/EuroSP.2018.00036
+
+2. M. Marlinspike and T. Perrin,
+"The Signal Protocol",
+Open Whisper Systems Whitepaper,
+https://signal.org/docs/specifications/x3dh/
+
+3. R. Canetti, S. Halevi, and J. Katz,
+"A Forward-Secure Public-Key Encryption Scheme",
+Advances in Cryptology — EUROCRYPT 2003,
+https://doi.org/10.1007/3-540-39200-9_27
+
+4. J. Katz and Y. Lindell,
+"Introduction to Modern Cryptography",
+3rd Edition, CRC Press, 2020.
+(Foundational reference on cryptographic primitives, protocols, and security models)
+
+#### Key Exchange & Group Key Management
+1. D. Boneh and V. Shoup,
+"A Graduate Course in Applied Cryptography",
+Stanford University,
+https://crypto.stanford.edu/~dabo/cryptobook/
+
+2. M. Bellare and P. Rogaway,
+"Entity Authentication and Key Distribution",
+UC Davis,
+https://web.cs.ucdavis.edu/~rogaway/papers/auth.pdf
+
+3. Y. Kim, A. Perrig, and G. Tsudik,
+"Tree-based Group Key Agreement",
+ACM Transactions on Information and System Security (TISSEC), 2004.
+https://doi.org/10.1145/984334.984336
+
+#### Messaging Security in Practice
+1. WhatsApp Engineering,
+"End-to-End Encryption in WhatsApp",
+WhatsApp Blog,
+https://engineering.fb.com/2020/11/19/security/end-to-end-encryption/
+
+2. Open Whisper Systems,
+"How Signal Uses the Double Ratchet Algorithm",
+https://signal.org/docs/specifications/doubleratchet/
+
+#### Cryptography Libraries & Tools
+1. Crypto++ Library Documentation,
+https://www.cryptopp.com/
+
+2. Boost.Asio Library Documentation,
+https://www.boost.org/doc/libs/1_85_0/doc/html/boost_asio.html
